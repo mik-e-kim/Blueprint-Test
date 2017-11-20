@@ -1,0 +1,56 @@
+Test Environment Details:
+
+Admin Username is: AdminNL
+
+OMSAutomationAccount Username is: OMSAdminVH
+
+Admin Password for both Admin and OMSAdmin is: lfWhxIY\jyRLf9
+
+SQL Password is: ?]w:<0G8Fq1YLr
+
+----------------------------------------------------------------------------------------
+
+NSGs
+-MGT NSG can be updated to restrict source of inbound traffic--increases security
+
+BitLocker on All VMs require a restart - not configured correctly
+-Possibly related to the frozen startbar/taskbar on all VMs
+
+AZ-BDC-VM is not domain-joined, and not functioning as a full backup DC
+
+AZ-PDC-VM - no AD Tools installed, except for PoSh module. Can be remotely managed. Intended to limit attack surface?
+
+Do we want bastion host as domain-joined?
+
+None of the availability sets are managed (using unmanaged disks--can result in single points of failure)--is this on the end user to configure?
+-Fault domains and update domains - more than is necessary for the deployment. Leave as is?
+
+DNS--only set on the primary DC
+
+Environment is Azure AD capable--on end user to configure?
+
+Keyvault - does not contain BackupFairFax policy - for end user to configure?
+	-Contains 8 keys (listed as containing 7 secrets--contains more than 7 secrets)
+	-if customer uses their own cert--recommend using managed key for the cert in AKV - add language?
+	
+
+
+
+
+Things to try:
+Address Name resolution issues--possibly will fix encryption problems
+
+schedule restarts for all VMs at the very end - active bitlocker
+
+Remove BitLocker from the template--initiate BitLocker through the script
+
+
+
+Bugs
+
+AzureDiskEncryption:
+Unable to read data from the transport connection: A connection attempt failed
+because the connected party did not properly respond after a period of time, or established connection failed because
+connected host has failed to respond.
+
+OMS

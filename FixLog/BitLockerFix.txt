@@ -1,0 +1,51 @@
+### AzureDeploy.json edits for BitLocker###
+
+vmencryptionsettings
+-1013
+-1425
+-1858
+-2006
+-2112
+
+
+### configureMGT.json edits ###
+
+vmencryptionsettings
+-44
+-157
+
+
+### configureSQL.json edits ###
+
+vmencryptionsettings
+-68
+-486
+
+
+### configureWebTier.json edits ###
+
+vmencryptionsettings
+-77
+-191
+
+
+### configuringVMAzureDiskEncryption-kek.json edits ###
+
+vmencryptionsettings
+-11
+-60
+
+
+### configuringVMAzureDiskEncryption-nokek.json edits ###
+
+vmencryptionsettings
+-11
+-55
+
+
+### provisionAndConfigureAD.json edits ###
+
+vmencryptionsettings
+-98
+-496
+

@@ -1,0 +1,17 @@
+Order of Operations for testing
+
+1. Update scripts locally
+	-edit/remove portions that will be tested later
+	-update links and URIs to point to my local github
+2. Upload scripts to repo in github
+3. Run deployment and test
+
+
+
+Things to Fix
+-Domain Join and setup the BDC VM
+-Fix BitLocker
+-Test OMS
+
+
+-KeyVault- BackupFairFax policy?
