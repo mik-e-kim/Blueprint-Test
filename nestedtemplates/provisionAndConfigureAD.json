@@ -415,6 +415,9 @@
                     "adBDCVMName": {
                         "value": "[parameters('adBDCVMName')]"
                     },
+                    "adminUsername": {
+                        "value": "[parameters('adminUsername')]"
+                    },
                     "adminPassword": {
                         "value": "[parameters('adminPassword')]"
                     },
