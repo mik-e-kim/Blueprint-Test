@@ -45,40 +45,10 @@
             "type": "string"
         }
     },
-    "resources": [
-        {
-            "comments": "Join domain - JsonADDomainExtension",
-            "apiVersion": "2015-06-15",
-            "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "[concat(parameters('adBDCVMName'),'/joindomain')]",
-            "tags": {
-                "Project": "BluePrint"
-            },
-            "dependsOn": [
-    
-            ],
-            "location": "[parameters('location')]",
-            "properties": {
-                "publisher": "Microsoft.Compute",
-                "type": "JsonADDomainExtension",
-                "typeHandlerVersion": "1.3",
-                "autoUpgradeMinorVersion": true,
-                "settings": {
-                    "Name": "[parameters('domainName')]",
-                    "User": "[concat(parameters('domainName'), '\\', parameters('adminUsername'))]",
-                    "Restart": "true",
-                    "Options": 3,
-                    "OUPath": ""
-                },
-                "protectedSettings": {
-                    "Password": "[parameters('adminPassword')]"
-                }
-            }
-        },
-        {
+    "resources": [{
         "type": "Microsoft.Compute/virtualMachines/extensions",
         "name": "[concat(parameters('adBDCVMName'),'/BDCBaselineDSC')]",
-        "apiVersion": "2015-06-15",
+        "apiVersion": "2016-03-30",
         "tags": {
             "Project": "BluePrint"
         },
@@ -92,11 +62,6 @@
                 "modulesURL": "[parameters('bdcModulesURL')]",
                 "configurationFunction": "[parameters('bdcConfigurationFunction')]",
                 "Properties": {
-                    "domainName": "[parameters('domainName')]",
-                    "adminCreds": {
-                        "userName": "[parameters('adminUsername')]",
-                        "password": "PrivateSettingsRef:adminPassword"
-                    },
                     "DNSServer": "[parameters('adPDCNICIPAddress')]",
                     "ExclusionPath": "[parameters('antimalwareInfo').exclusionPath.ad]",
                     "ExclusionExtension": "[parameters('antimalwareInfo').exclusionExtension.ad]",
@@ -105,10 +70,18 @@
                     "RemediationScheduleDay": "[parameters('antimalwareInfo').remediationScheduleDay]",
                     "ScanScheduleDay": "[parameters('antimalwareInfo').scanScheduleDay]",
                     "DisableRealtimeMonitoring": "[parameters('antimalwareInfo').disableRealtimeMonitoring]"
+                        /*"MachineName": "[parameters('adBDCVMName')]",
+                        "ResourceGroupName": "[parameters('ResourceGroupName')]",
+                        "AutomationAccountName": "[parameters('AutomationAccountName')]",
+                        "AzureAuthCreds": {
+                            "UserName": "[parameters('AzureUserName')]",
+                            "Password": "PrivateSettingsRef:AzurePassword"
+                        },
+                        "SubscriptionId": "[parameters('SubscriptionId')]",
+                        "EnvironmentName": "[parameters('EnvironmentName')]"*/
                 },
                 "protectedSettings": {
                     "items": {
-                        "adminPassword": "[parameters('adminPassword')]",
                         "AzurePassword": "[parameters('AzurePassword')]"
                     }
                 }
