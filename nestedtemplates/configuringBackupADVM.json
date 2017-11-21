@@ -71,7 +71,7 @@
                     "domainName": "[parameters('domainName')]",
                     "adminCreds": {
                         "userName": "[parameters('adminUsername')]",
-                        "password": "PrivateSettingsRef:adminPassword"
+                        "password": "[parameters('adminPassword')]"
                     },
                     "DNSServer": "[parameters('adPDCNICIPAddress')]",
                     "ExclusionPath": "[parameters('antimalwareInfo').exclusionPath.ad]",
