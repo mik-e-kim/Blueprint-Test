@@ -697,14 +697,14 @@
             "metadata": {
                 "description": "Linked Templates base url"
             },
-            "defaultValue": "https://raw.githubusercontent.com/AppliedIS/azure-blueprint/master/nestedtemplates"
+            "defaultValue": "https://raw.githubusercontent.com/mik-e-kim/Blueprint-Test/master/nestedtemplates"
         },
         "dscBaseUrl": {
             "type": "string",
             "metadata": {
                 "description": "DSC Scripts base url"
             },
-            "defaultValue": "https://raw.githubusercontent.com/AppliedIS/azure-blueprint/master/DSC"
+            "defaultValue": "https://raw.githubusercontent.com/mik-e-kim/Blueprint-Test/master/DSC"
         },
         "scriptsBaseUrl": {
             "type": "string",
@@ -712,7 +712,7 @@
                 "description": "DSC Scripts base url"
             },
 
-            "defaultValue": "https://raw.githubusercontent.com/AppliedIS/azure-blueprint/master/custom-scripts"
+            "defaultValue": "https://raw.githubusercontent.com/mik-e-kim/Blueprint-Test/master/custom-scripts"
         },
         "sqlServerVersion": {
             "type": "string",
